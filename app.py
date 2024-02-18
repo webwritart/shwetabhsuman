@@ -4,6 +4,7 @@ from models.member import Member
 from routes.main import main
 from routes.gallery import gallery
 from routes.account import account
+from routes.manager import manager
 from flask import Flask
 from dotenv import load_dotenv
 from models.member import Member, Role, member_role
@@ -22,7 +23,8 @@ login_manager.init_app(app)
 
 app.register_blueprint(main, url_prefix='/')
 app.register_blueprint(gallery, url_prefix='/gallery')
-app.register_blueprint(account, url_prefix='/gallery')
+app.register_blueprint(account, url_prefix='/account')
+app.register_blueprint(manager, url_prefix='/manager')
 
 with app.app_context():
     db.create_all()
