@@ -3,7 +3,7 @@ import os
 # from models.member import Member
 from routes.main import main
 from routes.gallery import gallery
-from routes.account import account
+# from routes.account import account
 from routes.manager import manager
 from routes.about import about
 from flask import Flask
