@@ -3,8 +3,8 @@ from flask import abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, current_user
 
-db = SQLAlchemy()
-login_manager = LoginManager()
+# db = SQLAlchemy()
+# login_manager = LoginManager()
 
 
 def admin_only(f):
