@@ -8,7 +8,7 @@ main = Blueprint('main', __name__, static_folder='static', template_folder='temp
 @main.route('/')
 def home():
     images = []
-    path = './static/images/concept'
+    path = '../static/images/concept'
 
     for f in os.listdir(path):
         images.append(path + '/' + f)
