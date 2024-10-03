@@ -36,23 +36,23 @@
         </li>
       </ul>
       <form class="d-flex" >
-        <ul class="navbar-nav">
-          {% if admin in current_user.role %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('manager.home')}}">Manager</a>
-          </li>
-          {% endif %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('account.home')}}">Hello {{ current_user.name.split()[0] }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('account.home')}}">My Account</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('account.logout')}}">Log Out</a>
-          </li>
-        </ul>
-      {% endif %}
+<!--        <ul class="navbar-nav">-->
+<!--          {% if admin in current_user.role %}-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="{{url_for('manager.home')}}">Manager</a>-->
+<!--          </li>-->
+<!--          {% endif %}-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="{{url_for('account.home')}}">Hello {{ current_user.name.split()[0] }}</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="{{url_for('account.home')}}">My Account</a>-->
+<!--          </li>-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="{{url_for('account.logout')}}">Log Out</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      {% endif %}-->
       </form>
     </div>
   </div>
