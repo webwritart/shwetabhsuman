@@ -5,15 +5,16 @@ from routes.main import main
 from routes.gallery import gallery
 from routes.account import account
 from routes.manager import manager
+from routes.about import about
 from flask import Flask
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from models.member import Member, Role, member_role
 
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('APP_SECRET')
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///shwetabh.db"
+app.secret_key = 'erghihogiOEIRTighrGHIER948ERGHr8g(%dgeoi*%J9HL(3grgfgr9KJJK'
+# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///shwetabh.db"
 
 
 db.init_app(app)
@@ -25,6 +26,7 @@ app.register_blueprint(main, url_prefix='/')
 app.register_blueprint(gallery, url_prefix='/gallery')
 app.register_blueprint(account, url_prefix='/account')
 app.register_blueprint(manager, url_prefix='/manager')
+app.register_blueprint(about, url_prefix='/about')
 
 with app.app_context():
     db.create_all()
@@ -36,4 +38,4 @@ def load_user(member_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

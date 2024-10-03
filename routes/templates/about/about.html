@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .center {
+    display: flex;
+    justify-content: center;
+}
+    .center-text {
+        text-align: center;
+    }
+
+    /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  background: rgb(176, 176, 176);
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+input[type=file] {
+  width: 100%; /* Full width */
+  background: rgb(176, 176, 176);
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: grey;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #6d388a;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+    <div style="filter: brightness(70%);">
+        <img src="../static/images/others/Kedarnath.jpg" width="100%" style="">
+    </div>
+    <div class="center">
+        <img src="../static/images/about/Profile pic.jpg" width="300" style="margin-top:-8%;z-index:10;">
+    </div>
+    <div>
+        <h4 class="center-text" style="padding-top:1%;">SHWETABH SUMAN</h4>
+        <h6 class="center-text">Concept Artist/ Illustrator</h6>
+        <p class="center-text" style="padding: 2% 20% 2% 20%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget urna et nisi finibus pellentesque.
+            Pellentesque luctus ipsum porttitor pulvinar scelerisque. Curabitur eget ullamcorper nunc, et egestas sem.
+            Donec blandit est sit amet mi luctus scelerisque. Donec ut congue diam.
+            Maecenas interdum odio laoreet, egestas turpis nec, rhoncus nisl. Nullam et metus id nisi bibendum convallis
+            ac non felis. Donec vel nulla finibus, aliquam nisi non, iaculis risus. Sed eu porta libero. Suspendisse
+            potenti. Nullam lacus sem, ultricies ut ullamcorper vitae, tincidunt at felis. Integer ipsum nisl, pulvinar
+            eget efficitur eget, interdum ut sapien. Praesent at commodo justo.</p>
+        <div style="background:rgba(0, 0, 0, 0.1);">
+            <h3 class="center-text" style="padding-top:1%;">EXPERIENCE</h3>
+            <p class="center-text" style="padding: 2% 20% 2% 20%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget urna et nisi finibus pellentesque.
+            Pellentesque luctus ipsum porttitor pulvinar scelerisque. Curabitur eget ullamcorper nunc, et egestas sem.
+            Donec blandit est sit amet mi luctus scelerisque. Donec ut congue diam.
+            Maecenas interdum odio laoreet, egestas turpis nec, rhoncus nisl. Nullam et metus id nisi bibendum convallis
+            ac non felis. Donec vel nulla finibus, aliquam nisi non, iaculis risus. Sed eu porta libero. Suspendisse
+            potenti. Nullam lacus sem, ultricies ut ullamcorper vitae, tincidunt at felis. Integer ipsum nisl, pulvinar
+            eget efficitur eget, interdum ut sapien. Praesent at commodo justo.</p>
+        </div>
+        <div style="padding-bottom:2%;">
+            <img src="../static/images/about/studio.jpg" width="100%">
+        </div>
+        <h3 class="center-text">SKILLS</h3>
+        <p class="center-text" style="padding: 2% 20% 2% 20%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget urna et nisi finibus pellentesque.
+            Pellentesque luctus ipsum porttitor pulvinar scelerisque. Curabitur eget ullamcorper nunc, et egestas sem.
+            Donec blandit est sit amet mi luctus scelerisque. Donec ut congue diam.
+            Maecenas interdum odio laoreet, egestas turpis nec, rhoncus nisl. Nullam et metus id nisi bibendum convallis
+            ac non felis. Donec vel nulla finibus, aliquam nisi non, iaculis risus. Sed eu porta libero. Suspendisse
+            potenti. Nullam lacus sem, ultricies ut ullamcorper vitae, tincidunt at felis. Integer ipsum nisl, pulvinar
+            eget efficitur eget, interdum ut sapien. Praesent at commodo justo.</p>
+        <div style="background:rgba(0, 0, 0, 0.1);">
+        <h3 class="center-text" style="padding-top:1%;">SOFTWARES</h3>
+        <p class="center-text" style="padding: 2% 20% 2% 20%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget urna et nisi finibus pellentesque.
+            Pellentesque luctus ipsum porttitor pulvinar scelerisque. Curabitur eget ullamcorper nunc, et egestas sem.
+            Donec blandit est sit amet mi luctus scelerisque. Donec ut congue diam.
+            Maecenas interdum odio laoreet, egestas turpis nec, rhoncus nisl. Nullam et metus id nisi bibendum convallis
+            ac non felis. Donec vel nulla finibus, aliquam nisi non, iaculis risus. Sed eu porta libero. Suspendisse
+            potenti. Nullam lacus sem, ultricies ut ullamcorper vitae, tincidunt at felis. Integer ipsum nisl, pulvinar
+            eget efficitur eget, interdum ut sapien. Praesent at commodo justo.</p>
+        </div>
+        <div style="padding-top:2%;">
+            <h2 class="center-text">DROP A MAIL</h2>
+        <div class="container" style="margin-top:0;">
+          <form action="#">
+
+            <label for="fullname">Name</label>
+            <input type="text" id="fullname" name="firstname" placeholder="Your name..">
+            <label for="message">Subject</label>
+            <textarea id="message" name="subject" placeholder="Write something.." style="height:200px; width:100%;"></textarea>
+            <input type="file" id="myFile" name="filename">
+            <input type="submit" value="Submit">
+
+          </form>
+        </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

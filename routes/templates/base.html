@@ -28,20 +28,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{{ url_for('gallery.character_concept') }}">CHARACTER CONCEPT</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{{ url_for('gallery.environments') }}">ENVIRONMENTS</a>-->
+<!--        </li>-->
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('gallery.character_concept') }}">CHARACTER CONCEPT</a>
+          <a class="nav-link" href="{{ url_for('about.home') }}">About Artist</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('gallery.environments') }}">ENVIRONMENTS</a>
+          <a class="nav-link" href="{{ url_for('main.home') }}">Portfolio</a>
         </li>
       </ul>
       <form class="d-flex" >
       {% if not logged_in %}
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{url_for('account.login')}}">Login/Register</a>
-          </li>
-        </ul>
+<!--        <ul class="navbar-nav">-->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" href="{{url_for('account.login')}}">Login/Register</a>-->
+<!--          </li>-->
+<!--        </ul>-->
       {% else %}
         <ul class="navbar-nav">
           {% if admin in current_user.role %}
@@ -66,6 +72,9 @@
 </nav>
     {% block content %}
     {% endblock %}
+    <div style="background:#2b2b2b;">
+        <h6 style="color:rgba(255,255,255,0.5); text-align:center; padding: 5vh;">&#169; 2024 | Shwetabh Suman | All Ideas & Illustrators are copyrighted | All Rights reserved</h6>
+    </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <footer>

@@ -10,10 +10,9 @@ member_role = db.Table('member_role',
 
 class Member(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), unique=True)
+    username = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
-    phone = db.Column(db.String(15))
     role = db.relationship('Role', secondary=member_role, backref='members')
 
 
