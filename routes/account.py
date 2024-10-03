@@ -1,11 +1,16 @@
 # import os
+<<<<<<< HEAD
 # # from extensions import db
+=======
+# from extensions import db
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 # from flask import Blueprint, render_template, request, flash, send_file, redirect, url_for, session
 # from werkzeug.security import check_password_hash, generate_password_hash
 # from models.member import Member, Role
 # from flask_login import current_user, login_required, login_user, logout_user
 # from datetime import date
 # import random
+<<<<<<< HEAD
 #
 # account = Blueprint('account', __name__, static_folder='static', template_folder='templates/account')
 #
@@ -13,11 +18,24 @@
 # today_date = date.today()
 #
 #
+=======
+
+# account = Blueprint('account', __name__, static_folder='static', template_folder='templates/account')
+
+# otp = random.randint(1000, 9999)
+# today_date = date.today()
+
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 # @account.route('/register', methods=['GET', 'POST'])
 # def register():
 #     num_list = []
 #     result = db.session.query(Member)
+<<<<<<< HEAD
 #
+=======
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 #     email = request.form.get('username')
 #     state = request.form.get('state')
 #     result = db.session.execute(db.select(Member).where(Member.email == email))
@@ -30,7 +48,11 @@
 #         method='pbkdf2:sha256',
 #         salt_length=8
 #     )
+<<<<<<< HEAD
 #
+=======
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 #     new_user = Member(
 #         email=request.form.get('email'),
 #         password=hash_and_salted_password,
@@ -45,12 +67,21 @@
 #     )
 #     db.session.add(new_user)
 #     db.session.commit()
+<<<<<<< HEAD
 #
 #     login_user(new_user)
 #     return redirect(url_for('account.home', name=current_user.name.split()[0]))
 #     return render_template("register.html", logged_in=current_user.is_authenticated)
 #
 #
+=======
+
+#     login_user(new_user)
+#     return redirect(url_for('account.home', name=current_user.name.split()[0]))
+#     return render_template("register.html", logged_in=current_user.is_authenticated)
+
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 # @account.route('/login', methods=['GET', 'POST'])
 # def login():
 #     num_list = []
@@ -120,7 +151,11 @@
 #             result = db.session.execute(db.select(Member).where(Member.phone == user_phone))
 #             user = result.scalar()
 #         password = request.form.get('password')
+<<<<<<< HEAD
 #
+=======
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 #         # Email or Phone doesn't exist or password incorrect:
 #         if not user:
 #             flash("That Email or Phone does not exist, please try again.", category="error")
@@ -138,6 +173,7 @@
 #                 flash("You are successfully logged in. Now proceed to enroll", "success")
 #                 return redirect(url_for('payment.home'))
 #             return redirect(url_for('account.home', name=current_user.name.split()[0]))
+<<<<<<< HEAD
 #
 #     return render_template("login.html", instruction='login')
 #
@@ -145,6 +181,15 @@
 # email_list = []
 #
 #
+=======
+
+#     return render_template("login.html", instruction='login')
+
+
+# email_list = []
+
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 # @account.route('/forgot_password', methods=['GET', 'POST'])
 # def forgot_password():
 #     if request.method == 'POST':
@@ -164,7 +209,11 @@
 #                 return render_template('check_mail_notification.html')
 #             else:
 #                 flash('No account found with the entered email!', 'error')
+<<<<<<< HEAD
 #
+=======
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 #         if request.form.get('password'):
 #             new_pwd = request.form.get('password')
 #             hash_and_salted_password = generate_password_hash(
@@ -175,7 +224,11 @@
 #             result = db.session.execute(db.select(Member).where(Member.email == email_list[0]))
 #             user = result.scalar()
 #             user.password = hash_and_salted_password
+<<<<<<< HEAD
 #
+=======
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 #             db.session.commit()
 #             login_user(user)
 #             flash('New password set successfully!', 'success')
@@ -184,10 +237,17 @@
 #                                '',
 #                                mail, image_dict)
 #             return redirect(url_for('account.home'))
+<<<<<<< HEAD
 #
 #     return render_template("forgot_password.html")
 #
 #
+=======
+
+#     return render_template("forgot_password.html")
+
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 # @account.route('/set_new_password', methods=['GET', 'POST'])
 # def set_new_password():
 #     entered_otp = request.args.get('otp')
@@ -196,8 +256,13 @@
 #     else:
 #         send_email_support('ERROR!!!', ['shwetabh@writart.com'], 'Problem forget password reset', '', '')
 #         return redirect(url_for("account.login"))
+<<<<<<< HEAD
 #
 #
+=======
+
+
+>>>>>>> fbc20e2b7632053eea779d1148f902826ee6c261
 # @account.route('/logout')
 # @login_required
 # def logout():
