@@ -8,7 +8,7 @@ from routes.manager import manager
 from routes.about import about
 from flask import Flask
 # from dotenv import load_dotenv
-from models.member import Member, Role, member_role
+# from models.member import Member, Role, member_role
 
 # load_dotenv()
 
