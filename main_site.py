@@ -1,5 +1,5 @@
 import os
-from extensions import db, login_manager
+# from extensions import db, login_manager
 from models.member import Member
 from routes.main import main
 from routes.gallery import gallery
