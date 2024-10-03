@@ -24,17 +24,17 @@ app.secret_key = 'erghihogiOEIRTighrGHIER948ERGHr8g(%dgeoi*%J9HL(3grgfgr9KJJK'
 
 app.register_blueprint(main, url_prefix='/')
 app.register_blueprint(gallery, url_prefix='/gallery')
-app.register_blueprint(account, url_prefix='/account')
+# app.register_blueprint(account, url_prefix='/account')
 app.register_blueprint(manager, url_prefix='/manager')
 app.register_blueprint(about, url_prefix='/about')
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 
-@login_manager.user_loader
-def load_user(member_id):
-    return db.get_or_404(Member, member_id)
+# # @login_manager.user_loader
+# # def load_user(member_id):
+#     return db.get_or_404(Member, member_id)
 
 
 if __name__ == '__main__':
