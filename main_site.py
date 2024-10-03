@@ -17,8 +17,8 @@ app.secret_key = 'erghihogiOEIRTighrGHIER948ERGHr8g(%dgeoi*%J9HL(3grgfgr9KJJK'
 # app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///shwetabh.db"
 
 
-db.init_app(app)
-login_manager.init_app(app)
+# db.init_app(app)
+# login_manager.init_app(app)
 
 # ------------------------------ BLUEPRINTS -------------------------------- #
 
