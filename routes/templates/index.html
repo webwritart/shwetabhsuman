@@ -4,7 +4,7 @@
 <style>
     .hero {
         width: 100%;
-        background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('../static/images/others/Fish-girl-character-exploration.jpg');
+        background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('../static/images/environment_concept/Fish-girl-character-exploration.jpg');
         background-size: cover;
         background-repeat: no-repeat;
 <!--        aspect-ratio: 3 / 1;-->
@@ -16,7 +16,8 @@
 
 </style>
 <body>
-    <div class="col hero">
+<div class="row">
+    <div class="col-12, col-s-12 hero">
         <h1 style="text-align: center; padding:8% 0% 0% 0%;">THE WORLD UNDERWATER</h1>
         <h5 style="text-align: center; padding: 3% 20% 8% 20%; line-height: 2rem; opacity:0.8; font-family: 'Georgia';">
             Mother Earth gave human everything but human abused every boon. Eventually all the glaciers melted and
@@ -27,26 +28,69 @@
             answered to the new challenges.
         </h5>
     </div>
-    <div>
-        {% for img in images %}
-        <img src={{img}} width="100%">
-        {% endfor %}
-    </div>
-    <div>
-        <h1 style="text-align:center; padding: 3% 0% 3% 0%;">Character Concept</h1>
-    </div>
-    <div>
-        <img src="../static/images/character/1.Agrarian-characters-concept.jpg" width="100%">
-        <img src="../static/images/character/2.Agrarian-People-II.jpg" width="100%">
-    </div>    <div>
-        <h1 style="text-align:center; padding: 3% 0% 3% 0%;">Compositions</h1>
-    </div>
-    <div>
-        <img src="../static/images/Composition/Castle.jpg" width="100%" style="padding: 0% 32% 5% 32%;">
-    </div>
-    <div>
-        <img src="../static/images/others/Fish-girl-character-exploration.jpg" width="100%" style="padding: 0% 5% 0% 5%;">
-    </div>
+    <a href="{{ url_for('main.game_world_plan')}}#world-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[0]}}">
+        <h1>Game World Plan</h1>
+    </a>
+    <a href="{{ url_for('main.character_concept')}}#character-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[1]}}">
+        <h1>Character Concept</h1>
+    </a>
+    <a href="{{ url_for('main.environment_concept')}}#environment-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[2]}}">
+        <h1>Environment Concept</h1>
+    </a>
+    <a href="{{ url_for('main.composition')}}#composition-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[3]}}">
+        <h1>Compositions</h1>
+    </a>
+
+    {% block inner_content %}
+    {% endblock %}
+
+    {% if bottom_menu == 'y' %}
+    <a href="{{ url_for('main.game_world_plan')}}#world-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[0]}}">
+        <h1>Game World Plan</h1>
+    </a>
+    <a href="{{ url_for('main.character_concept')}}#character-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[1]}}">
+        <h1>Character Concept</h1>
+    </a>
+    <a href="{{ url_for('main.environment_concept')}}#environment-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[2]}}">
+        <h1>Environment Concept</h1>
+    </a>
+    <a href="{{ url_for('main.composition')}}#composition-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[3]}}">
+        <h1>Compositions</h1>
+    </a>
+    {% endif %}
+
+<!--</div>-->
+<!--    <div class="col hero">-->
+<!--        <h1 style="text-align: center; padding:8% 0% 0% 0%;">THE WORLD UNDERWATER</h1>-->
+<!--        <h5 style="text-align: center; padding: 3% 20% 8% 20%; line-height: 2rem; opacity:0.8; font-family: 'Georgia';">-->
+<!--            Mother Earth gave human everything but human abused every boon. Eventually all the glaciers melted and-->
+<!--            whole earth surface except mountain peaks submerged. The feedback effect (chain evaporation and precipitation vicious cycle increasing-->
+<!--            greenhouse effect) made it impossible for humanity to live on surface. So the world went underwater-->
+<!--            rebuilding their lives, facing new challenges, learning new things, fighting over resources as again the survival-->
+<!--            instinct took hold of humanity. <br>Let's dive deeper into their lives and behold how their instincts have-->
+<!--            answered to the new challenges.-->
+<!--        </h5>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        {% for img in images %}-->
+<!--        <img src={{img}} width="100%">-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <h1 style="text-align:center; padding: 3% 0% 3% 0%;">Character Concept</h1>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <img src="../static/images/character/1.Agrarian-characters-concept.jpg" width="100%">-->
+<!--        <img src="../static/images/character/2.Agrarian-People-II.jpg" width="100%">-->
+<!--    </div>    <div>-->
+<!--        <h1 style="text-align:center; padding: 3% 0% 3% 0%;">Compositions</h1>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <img src="../static/images/Composition/Castle.jpg" width="100%" style="padding: 0% 32% 5% 32%;">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <img src="../static/images/others/Fish-girl-character-exploration.jpg" width="100%" style="padding: 0% 5% 0% 5%;">-->
+<!--    </div>-->
 </body>
 
 

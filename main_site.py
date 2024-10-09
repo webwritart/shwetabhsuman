@@ -1,14 +1,15 @@
 import os
 # from extensions import db, login_manager
 
-#from models.member import Member
+# from models.member import Member
 # from models.member import Member
 from routes.main import main
-#from routes.gallery import gallery
+# from routes.gallery import gallery
 # from routes.account import account
-#from routes.manager import manager
+# from routes.manager import manager
 from routes.about import about
 from flask import Flask
+
 # from dotenv import load_dotenv
 # from models.member import Member, Role, member_role
 
@@ -25,9 +26,9 @@ app.secret_key = 'erghihogiOEIRTighrGHIER948ERGHr8g(%dgeoi*%J9HL(3grgfgr9KJJK'
 # ------------------------------ BLUEPRINTS -------------------------------- #
 
 app.register_blueprint(main, url_prefix='/')
-#app.register_blueprint(gallery, url_prefix='/gallery')
+# app.register_blueprint(gallery, url_prefix='/gallery')
 # app.register_blueprint(account, url_prefix='/account')
-#app.register_blueprint(manager, url_prefix='/manager')
+# app.register_blueprint(manager, url_prefix='/manager')
 app.register_blueprint(about, url_prefix='/about')
 
 # with app.app_context():
@@ -42,4 +43,5 @@ app.register_blueprint(about, url_prefix='/about')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    # app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)
