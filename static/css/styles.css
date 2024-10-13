@@ -14,7 +14,11 @@
 
 [class*="col-"] {
   float: left;
-  padding: 15px;
+  padding: 0px;
+}
+
+.top-padding {
+    padding-top: 5%;
 }
 
 /* html {
