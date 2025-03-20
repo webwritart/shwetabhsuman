@@ -11,3 +11,8 @@ def home():
         email = request.form.get('mail')
         # file = request.files
     return render_template('about.html')
+
+
+@about.route('/contact', methods=['GET', 'POST'])
+def contact():
+    return render_template('contact.html')

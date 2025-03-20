@@ -2,62 +2,82 @@
 {% block content %}
 
 <style>
-    .hero {
-        width: 100%;
-        background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('../static/images/environment_concept/Fish-girl-character-exploration.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-<!--        aspect-ratio: 3 / 1;-->
-        height: auto;
-        top: 0px;
-        bottom: 0px;
-        color: white;
-    }
+
+
+
+
 
 </style>
 <body>
-<div class="row">
-    <div class="col-12, col-s-12 hero">
-        <h1 style="text-align: center; padding:8% 0% 0% 0%;">THE WORLD UNDERWATER</h1>
-        <h5 style="text-align: center; padding: 3% 20% 8% 20%; line-height: 2rem; opacity:0.8; font-family: 'Georgia';">
-            Mother Earth gave human everything but human abused every boon. Eventually all the glaciers melted and
-            whole earth surface except mountain peaks submerged. The feedback effect (chain evaporation and precipitation vicious cycle increasing
-            greenhouse effect) made it impossible for humanity to live on surface. So the world went underwater
-            rebuilding their lives, facing new challenges, learning new things, fighting over resources as again the survival
-            instinct took hold of humanity. <br>Let's dive deeper into their lives and behold how their instincts have
-            answered to the new challenges.
-        </h5>
-    </div>
-    <a href="{{ url_for('main.game_world_plan')}}#world-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[0]}}">
-        <h1>Game World Plan</h1>
-    </a>
-    <a href="{{ url_for('main.character_concept')}}#character-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[1]}}">
-        <h1>Character Concept</h1>
-    </a>
-    <a href="{{ url_for('main.environment_concept')}}#environment-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[2]}}">
-        <h1>Environment Concept</h1>
-    </a>
-    <a href="{{ url_for('main.composition')}}#composition-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[3]}}">
-        <h1>Compositions</h1>
-    </a>
 
-    {% block inner_content %}
-    {% endblock %}
-
-    {% if bottom_menu == 'y' %}
-    <a href="{{ url_for('main.game_world_plan')}}#world-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[0]}}">
-        <h1>Game World Plan</h1>
-    </a>
-    <a href="{{ url_for('main.character_concept')}}#character-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[1]}}">
-        <h1>Character Concept</h1>
-    </a>
-    <a href="{{ url_for('main.environment_concept')}}#environment-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[2]}}">
-        <h1>Environment Concept</h1>
-    </a>
-    <a href="{{ url_for('main.composition')}}#composition-start" class="col-3 col-s-6 portfolio-options" style="color:{{col[3]}}">
-        <h1>Compositions</h1>
-    </a>
+{% if bottom_menu == 'y' %}
+<div class="gallery-menu">
+    {% if page == 'world' %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png"></a>
+    {% else %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png"></a>
     {% endif %}
+    {% if page == 'characters' %}
+        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png"></a>
+    {% else %}
+        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button.png"></a>
+    {% endif %}
+    {% if page == 'environment' %}
+        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png"></a>
+    {% else %}
+        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png"></a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% block index_content %}
+
+<div class="col-12, col-s-12 hero">
+    <h1 style="text-align: center; padding:8% 0% 0% 0%;">SURVIVAL UNDERWATER</h1>
+    <h6 style="text-align: center; padding:0% 0% 0% 0%; opacity: 0.5;">MMORPG - SURVIVAL - POST-APOCALYPTIC</h6>
+    <h5 style="text-align: center; padding: 3% 20% 8% 20%; line-height: 2rem; opacity:0.8; font-family:sans-serif; font-weight:100;">
+        Mother Earth gave human everything but human abused every boon. Eventually all the glaciers melted and
+        whole earth surface except mountain peaks submerged. The feedback effect (chain evaporation and precipitation vicious cycle increasing
+        greenhouse effect) made it impossible for humanity to live on surface. So the world went underwater
+        rebuilding their lives, facing new challenges, learning new things, fighting over resources as again the survival
+        instinct took hold of humanity. <br>Let's dive deeper into their lives and behold how their instincts have
+        answered to the new challenges.
+    </h5>
+</div>
+<div class="cta">
+    <img src="static/images/others/cta_image.jpg" width="100%">
+    <div class="cta-btn"><a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/cta_button.png"></a></div>
+</div>
+<div class="cta">
+    <img src="static/images/others/cta_image.jpg" width="100%">
+    <div class="cta-btn"><a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/cta_button.png"></a></div>
+</div>
+<div class="cta">
+    <img src="static/images/others/cta_image.jpg" width="100%">
+    <div class="cta-btn"><a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/cta_button.png"></a></div>
+</div>
+
+{% endblock %}
+
+{% if bottom_menu == 'y' %}
+<div class="gallery-menu">
+    {% if page == 'world' %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png"></a>
+    {% else %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png"></a>
+    {% endif %}
+    {% if page == 'characters' %}
+        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png"></a>
+    {% else %}
+        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button.png"></a>
+    {% endif %}
+    {% if page == 'environment' %}
+        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png"></a>
+    {% else %}
+        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png"></a>
+    {% endif %}
+</div>
+{% endif %}
 
 <!--</div>-->
 <!--    <div class="col hero">-->
