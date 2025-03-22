@@ -103,6 +103,27 @@ body {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+#title {
+    text-align: center;
+    padding:8% 0% 0% 0%;
+    font-size:1.4rem;
+
+}
+#title-genre-text {
+    text-align: center;
+    padding:0% 0% 0% 0%;
+    opacity: 0.5;
+    font-size: 0.7rem;
+}
+#title-text {
+    text-align: center;
+    padding: 3% 20% 8% 20%;
+    line-height: 2rem;
+    opacity:0.8;
+    font-family:sans-serif;
+    font-weight:100;
+    font-size:0.8rem;
+}
 
 
 @media only screen and (min-width: 600px) {
@@ -127,6 +148,15 @@ body {
         }
     .nav-bar {
        font-size: 1.1rem;
+   }
+   #title-text {
+       font-size:0.9rem;
+   }
+   #title {
+       font-size: 1.6rem;
+   }
+   #title-genre-text {
+    font-size: 0.8rem;
    }
 
 }
@@ -153,6 +183,15 @@ body {
   .nav-bar {
        font-size: 1.3rem;
    }
+   #title-text {
+    font-size:1rem;
+   }
+    #title {
+       font-size: 1.8rem;
+   }
+    #title-genre-text {
+        font-size: 0.9rem;
+   }
 }
 @media (min-width: 1200px) {
     .cta-btn {
@@ -162,6 +201,15 @@ body {
     }
     .nav-bar {
        font-size: 1.4rem;
+   }
+   #title-text {
+    font-size:1.2rem;
+   }
+   #title {
+       font-size: 2.1rem;
+   }
+    #title-genre-text {
+        font-size: 1rem;
    }
 }
 @media (min-width: 1900px) {
@@ -173,6 +221,15 @@ body {
      .nav-bar {
        font-size: 1.6rem;
    }
+   #title-text {
+    font-size:1.4rem;
+   }
+   #title {
+       font-size: 2.4rem;
+   }
+    #title-genre-text {
+        font-size: 1.1rem;
+   }
 }
 @media (min-width: 2500px) {
     .cta-btn {
@@ -182,6 +239,15 @@ body {
     }
      .nav-bar {
        font-size: 1.9rem;
+   }
+   #title-text {
+    font-size:1.6rem;
+   }
+   #title {
+       font-size: 3.2rem;
+   }
+    #title-genre-text {
+        font-size: 1.4rem;
    }
 }
 
