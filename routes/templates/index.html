@@ -6,11 +6,6 @@
 
 {% if bottom_menu == 'y' %}
 <div class="gallery-menu">
-    {% if page == 'world' %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>
-    {% endif %}
     {% if page == 'characters' %}
         <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png" loading="lazy"></a>
     {% else %}
@@ -20,6 +15,11 @@
         <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png" loading="lazy"></a>
     {% else %}
         <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png" loading="lazy"></a>
+    {% endif %}
+    {% if page == 'world' %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>
+    {% else %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>
     {% endif %}
 </div>
 {% endif %}
@@ -63,11 +63,6 @@
 
 {% if bottom_menu == 'y' %}
 <div class="gallery-menu">
-    {% if page == 'world' %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>
-    {% endif %}
     {% if page == 'characters' %}
         <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png" loading="lazy"></a>
     {% else %}
@@ -77,6 +72,11 @@
         <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png" loading="lazy"></a>
     {% else %}
         <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png" loading="lazy"></a>
+    {% endif %}
+    {% if page == 'world' %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>
+    {% else %}
+        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>
     {% endif %}
 </div>
 {% endif %}
