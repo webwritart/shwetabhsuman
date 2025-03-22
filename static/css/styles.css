@@ -2,6 +2,8 @@
 
 
 html {width: 100%; height: 100%; overflow:auto; font-size: 16px;}
+body {
+}
 
 .nav-bar {
     display: block;
@@ -56,7 +58,7 @@ html {width: 100%; height: 100%; overflow:auto; font-size: 16px;}
 }
 .hero {
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('../images/environment_concept/Fish-girl-character-exploration.jpg');
+    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.1)), url('../images/web_design/title_image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     aspect-ratio: 3 / 1;
@@ -71,13 +73,14 @@ html {width: 100%; height: 100%; overflow:auto; font-size: 16px;}
     display: flex;
     flex-direction: column;
     text-align: center;
-    align-items: center;
+    align-items: left;
 }
 .cta-btn {
     width: 30%;
     margin-top:-11%;
     margin-bottom:11%;
     transition: transform 0.5s;
+    margin: 0% 0% 0% 4.5%;
 }
 .cta-btn:hover {
     -ms-transform: scale(1.2);
@@ -94,10 +97,24 @@ html {width: 100%; height: 100%; overflow:auto; font-size: 16px;}
     padding: 2% 5%;
 }
 .gallery-menu a:hover {
-    -ms-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+.illustration-btn {
+    display: flex;
+    justify-content: center;
+}
+.illustration-btn a {
+    width: 10%;
+    transition: transform 0.5s;
+}
+.illustration-btn a:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+
 
 @media only screen and (min-width: 600px) {
   /* For tablets: */
@@ -215,12 +232,16 @@ a:hover {
     display: flex;
     justify-content: center;
 }
+.center img {
+    width: 16%;
+}
 .center-text {
     text-align: center;
 }
 .right-text {
     text-align: right;
 }
+
 /*  --------------------------------------------------------------------- HOME ----------------------------------------------------------------------------------------------------------------------  */
 
 
