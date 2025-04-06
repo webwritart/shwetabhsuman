@@ -124,6 +124,13 @@ body {
     font-weight:100;
     font-size:0.8rem;
 }
+.heading {
+    margin: 10% 0% 0% 0%;
+}
+
+.heading h1 {
+    font-size: 1.5rem;
+}
 
 
 @media only screen and (min-width: 600px) {
@@ -159,7 +166,12 @@ body {
    #title-genre-text {
     font-size: 0.8rem;
    }
-
+   .heading {
+    margin: 5% 0% 0% 0%;
+    }
+   .heading h1 {
+    font-size: 1.7rem;
+}
 }
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -194,6 +206,10 @@ body {
     #title-genre-text {
         font-size: 0.9rem;
    }
+    .heading h1 {
+     font-size: 1.8rem;
+     margin-left: 3%;
+    }
 }
 @media (min-width: 1200px) {
     .cta-btn {
@@ -214,6 +230,12 @@ body {
     #title-genre-text {
         font-size: 1rem;
    }
+    .heading {
+        margin: 3% 0% 0% 0%;
+    }
+    .heading h1 {
+        font-size: 2.5rem;
+    }
 }
 @media (min-width: 1900px) {
     .cta-btn {
@@ -234,6 +256,9 @@ body {
     #title-genre-text {
         font-size: 1.1rem;
    }
+   .heading h1 {
+        font-size: 3rem;
+    }
 }
 @media (min-width: 2500px) {
     .cta-btn {
@@ -254,6 +279,9 @@ body {
     #title-genre-text {
         font-size: 1.4rem;
    }
+   .heading h1 {
+        font-size: 4rem;
+    }
 }
 
 .portfolio-options {

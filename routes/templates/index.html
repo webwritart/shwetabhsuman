@@ -4,25 +4,25 @@
 
 <body>
 
-{% if bottom_menu == 'y' %}
-<div class="gallery-menu">
-    {% if page == 'characters' %}
-        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button.png" loading="lazy"></a>
-    {% endif %}
-    {% if page == 'environment' %}
-        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png" loading="lazy"></a>
-    {% endif %}
-    {% if page == 'world' %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>
-    {% endif %}
-</div>
-{% endif %}
+<!--{% if bottom_menu == 'y' %}-->
+<!--<div class="gallery-menu">-->
+<!--    {% if page == 'characters' %}-->
+<!--        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png" loading="lazy"></a>-->
+<!--    {% else %}-->
+<!--        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button.png" loading="lazy"></a>-->
+<!--    {% endif %}-->
+<!--    {% if page == 'environment' %}-->
+<!--        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png" loading="lazy"></a>-->
+<!--    {% else %}-->
+<!--        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png" loading="lazy"></a>-->
+<!--    {% endif %}-->
+<!--    {% if page == 'world' %}-->
+<!--        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>-->
+<!--    {% else %}-->
+<!--        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>-->
+<!--    {% endif %}-->
+<!--</div>-->
+<!--{% endif %}-->
 
 {% block index_content %}
 
@@ -34,15 +34,12 @@
     height: auto;
     color: white;
     margin: 0% 0% 2% 0%;">
-    <h1 id="title">SURVIVAL UNDERWATER</h1>
+    <h1 id="title">HUNTING ZONE</h1>
     <h6 id="title-genre-text" style="">MMORPG - SURVIVAL - POST-APOCALYPTIC</h6>
 <h5 id="title-text">
-        Mother Earth gave human everything but human abused every boon. Eventually all the glaciers melted and
-        whole earth surface except mountain peaks submerged. The feedback effect (chain evaporation and precipitation vicious cycle increasing
-        greenhouse effect) made it impossible for humanity to live on surface. So the world went underwater
-        rebuilding their lives, facing new challenges, learning new things, fighting over resources as again the survival
-        instinct took hold of humanity. <br>Let's dive deeper into their lives and behold how their instincts have
-        answered to the new challenges.
+        What began with resource battle has escalated to global chaos. The whole world has gone rogue hunting whoever or
+        whatever possess any resource. Societies have broken into small factions with sword to each other's throats.
+    <br>Let's explore the HUNTING ZONE!
     </h5>
 </div>
 
@@ -50,36 +47,36 @@
     <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_cta.jpg" width="100%" loading="lazy"></a>
     <div class="cta-btn"><a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a></div>
 </div>
-<div class="cta">
-    <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_cta.jpg" width="100%" loading="lazy"></a>
-    <div class="cta-btn"><a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a></div>
-</div>
-<div class="cta">
-    <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_cta.jpg" width="100%" loading="lazy"></a>
-    <div class="cta-btn"><a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a></div>
-</div>
+<!--<div class="cta">-->
+<!--    <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_cta.jpg" width="100%" loading="lazy"></a>-->
+<!--    <div class="cta-btn"><a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a></div>-->
+<!--</div>-->
+<!--<div class="cta">-->
+<!--    <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_cta.jpg" width="100%" loading="lazy"></a>-->
+<!--    <div class="cta-btn"><a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a></div>-->
+<!--</div>-->
 
 {% endblock %}
 
-{% if bottom_menu == 'y' %}
-<div class="gallery-menu">
-    {% if page == 'characters' %}
-        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button.png" loading="lazy"></a>
-    {% endif %}
-    {% if page == 'environment' %}
-        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png" loading="lazy"></a>
-    {% endif %}
-    {% if page == 'world' %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>
-    {% else %}
-        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>
-    {% endif %}
-</div>
-{% endif %}
+<!--{% if bottom_menu == 'y' %}-->
+<!--<div class="gallery-menu">-->
+<!--    {% if page == 'characters' %}-->
+<!--        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button_active.png" loading="lazy"></a>-->
+<!--    {% else %}-->
+<!--        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_button.png" loading="lazy"></a>-->
+<!--    {% endif %}-->
+<!--    {% if page == 'environment' %}-->
+<!--        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button_active.png" loading="lazy"></a>-->
+<!--    {% else %}-->
+<!--        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_button.png" loading="lazy"></a>-->
+<!--    {% endif %}-->
+<!--    {% if page == 'world' %}-->
+<!--        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button_active.png" loading="lazy"></a>-->
+<!--    {% else %}-->
+<!--        <a href="{{url_for('main.game_world_plan')}}"><img src="static/images/web_design/world_plan_button.png" loading="lazy"></a>-->
+<!--    {% endif %}-->
+<!--</div>-->
+<!--{% endif %}-->
 
 
 </body>
