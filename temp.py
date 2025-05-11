@@ -17,6 +17,7 @@ from extensions import db
 #     method='pbkdf2:sha256',
 #     salt_length=8
 # )
+# print(hash_and_salted_password)
 # with app.app_context():
 #     user = db.session.query(Member).filter_by(name='Shwetabh Suman').scalar()
 #     role = db.session.query(Role).filter_by(name='admin').scalar()

