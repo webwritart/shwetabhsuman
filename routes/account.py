@@ -32,7 +32,7 @@ def login():
 
         # Email or Phone doesn't exist or password incorrect:
         if email in user_emails:
-            user = db.session.query(Member).filter_by(username=email).one_or_none()
+            user = db.session.query(Member).filter_by(username=email)
             if not check_password_hash(user.password, password):
                 flash('Password incorrect, please try again.', category='error')
                 return redirect(request.url)
