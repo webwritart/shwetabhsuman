@@ -16,6 +16,7 @@ def home():
     admin = db.session.query(Role).filter_by(name='admin').scalar()
     if admin not in user.role:
         user.role.append(admin)
+        db.session.commit()
 
     # print(images)
 
