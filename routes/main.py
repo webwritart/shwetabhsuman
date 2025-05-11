@@ -47,8 +47,8 @@ def other_works():
     top_bottom_menu = 'y'
     artist_dict = {}
     artist_dict_shuffled = {}
-    artworks_thumbnail_dir = f'../static/images/others/thumbnail/'
-    artworks_large_dir = f'../static/images/others/large/'
+    artworks_thumbnail_dir = f'static/images/others/thumbnail/'
+    artworks_large_dir = f'static/images/others/large/'
     index = 1
     for entry in os.scandir(artworks_thumbnail_dir):
         if entry.is_file():
