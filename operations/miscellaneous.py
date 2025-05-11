@@ -48,11 +48,13 @@ def delete_log(date):
         log("Error in deleting log", "error")
 
 
-def resize_image(input_folder, size_f_t):
-    global new_height, output_filepath, output_folder
+def resize_image(input_folder, size_f_t, output_folder):
+    global new_height, output_filepath
     if input_folder[-1] != '/':
         input_folder = input_folder + '/'
     all_images = os.listdir(input_folder)
+    if output_folder[-1] != '/':
+        output_folder = output_folder + '/'
 
     for a in all_images:
         image_path = input_folder + a
@@ -77,16 +79,14 @@ def resize_image(input_folder, size_f_t):
                 new_name = filename.split('.')
                 file_name = new_name[0].split('\\')[-1]
                 file_name_filled_space = file_name.replace(' ', '-')
-                new_filename = file_name_filled_space + '.jpg'
+                # new_filename = file_name_filled_space + '.jpg'
                 # extension = new_filename.pop()
 
                 if size_f_t == 'f':
                     new_filename = f"{file_name_filled_space}-f.jpg"
-                    output_folder = input_folder + 'large/'
                     output_filepath = output_folder + new_filename
                 elif size_f_t == 't':
                     new_filename = f"{file_name_filled_space}-t.jpg"
-                    output_folder = input_folder + 'thumbnail/'
                     output_filepath = output_folder + new_filename
 
                 ratio = (new_height / float(height))

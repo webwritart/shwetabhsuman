@@ -1,4 +1,5 @@
 import pprint
+import random
 
 from flask import Blueprint, render_template
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -45,6 +46,7 @@ def other_works():
     page = 'other_works'
     top_bottom_menu = 'y'
     artist_dict = {}
+    artist_dict_shuffled = {}
     artworks_thumbnail_dir = f'static/images/others/thumbnail/'
     artworks_large_dir = f'static/images/others/large/'
     index = 1
@@ -63,8 +65,13 @@ def other_works():
             }
             artist_dict[index] = img
             index += 1
-    pprint.pprint(artist_dict)
-    return render_template('other_works.html', bottom_menu=top_bottom_menu, page=page, dict=artist_dict)
+    keys = list(artist_dict.keys())
+    random.shuffle(keys)
+    for key in keys:
+        item = artist_dict[key]
+        artist_dict_shuffled[key] = item
+    print(artist_dict_shuffled)
+    return render_template('other_works.html', bottom_menu=top_bottom_menu, page=page, dict=artist_dict_shuffled)
 
 
 @main.route('/composition')

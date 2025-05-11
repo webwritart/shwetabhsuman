@@ -1,11 +1,140 @@
 {% extends "index.html" %}
 {% block index_content %}
 <style>
-.artwork-popup {
-    width:50%;
+    .artworks-container {
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 2% 5%;
+        background: black;
+        text-align: center;
+        color: gray;
+    }
+    .artworks img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        margin: 1%;
+    }
+    .artworks-container h3{
+        font-size: 2.2rem;
+    }
+    .artworks-container p {
+        font-size: 1.2rem;
+    }
+#full-size-img-box {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background: white;
 }
+#full-size-img-box img {
+    max-height:80vh;
+    max-width:100vw;
+}
+#full-size-img-box h3 {
+    font-size:1.5rem;
+}
+.artwork-popup {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+#artwork-popup {
+    display:none;
+}
+.artwork-popup {
+    z-index: 100;
+}
+#artwork-popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    z-index: 1; /* Ensure it's behind the popup */
+}
+.artwork-popup p a {
+    font-size: 1rem;
+}
+@media only screen and (min-width : 1900px) {
 
-
+}
+@media only screen and (max-width : 1900px) {
+    .artworks-container h3{
+        font-size: 1.8rem;
+    }
+    .artworks-container p {
+        font-size: 1rem;
+    }
+}
+.artwork-popup p, a {
+    font-size: 1rem;
+}
+@media only screen and (max-width : 1440px) {
+    .artworks img {
+        width: 150px;
+        height: 150px;
+    }
+    .artworks-container h3{
+        font-size: 1.6rem;
+    }
+    .artworks-container p {
+        font-size: 0.9rem;
+    }
+#full-size-img-box h3 {
+    font-size:1.3rem;
+}
+}
+@media only screen and (max-width : 1024px) {
+    .artworks-container h3{
+        font-size: 1.4rem;
+    }
+#artwork-popup {
+    padding-bottom:2%;
+}
+ .artworks img {
+        width: 125px;
+        height: 125px;
+    }
+    .artworks-container p {
+        font-size: 0.8rem;
+    }
+#full-size-img-box h3 {
+    font-size:1.2rem;
+}
+}
+@media only screen and (max-width : 768px) {
+     .artworks img {
+        width: 100px;
+        height: 100px;
+    }
+    .artworks-container h3{
+        font-size: 1.3rem;
+    }
+    .artwork-popup p, a {
+        font-size: 0.8rem;
+    }
+#full-size-img-box h3 {
+    font-size:1.1rem;
+}
+}
+@media only screen and (max-width : 576px) {
+    .artworks-container h3{
+        font-size: 1.2rem;
+        padding-top:4%;
+    }
+    .artwork-popup p, a {
+        font-size: 0.7rem;
+    }
+#full-size-img-box h3 {
+    font-size:1rem;
+}
+}
 </style>
 <div class="artworks-container">
     <h3>OTHER ARTWORKS</h3>
@@ -16,24 +145,25 @@
     {% endfor %}
     </div>
 </div>
-<div id="artwork-popup-overlay"></div>
-<!--<div class="artwork-popup">-->
-<!--    <div id="artwork-popup">-->
-<!--        <div style=" display:flex; justify-content:space-between; background:black; color:gray; padding:1% 2% 0% 2%;">-->
-<!--            <p style="background:yellow;">IMAGE VIEWER</p>-->
-<!--            <a type="button" style="color:white;background:red;" onclick="closeFullImage()">Close</a>-->
-<!--        </div>-->
-<!--        <div id="full-size-img-box">-->
-<!--            <h3 id="artwork-title"></h3>-->
-<!--            <img id="full-size-img" src="">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<div id="artwork-popup-overlay" onclick="closeFullImage()"></div>
+<div class="artwork-popup">
+    <div id="artwork-popup">
+        <div style="display:flex; justify-content:space-between; width:100%; background:black; color:gray; padding:1% 2% 0% 2%;">
+            <p>IMAGE VIEWER</p>
+            <a type="button" style="color:white;" onclick="closeFullImage()">Close</a>
+        </div>
+        <div id="full-size-img-box">
+            <h3 id="artwork-title"></h3>
+            <img id="full-size-img" src="">
+        </div>
+    </div>
+</div>
 
-<h1>Gestures</h1>
-<img src="static/images/character_concept/lead/Gesture.jpg" loading="lazy">
-<img src="static/images/character_concept/lead/sketch.jpg" loading="lazy">
-
+<div class="full-width-container vertical-flex">
+    <h1>Gestures</h1>
+    <img class="full-width-img" src="static/images/character_concept/lead/Gesture.jpg" loading="lazy">
+    <img class="full-width-img" style="padding-top:2%;" src="static/images/character_concept/lead/sketch.jpg" loading="lazy">
+</div>
 
 <script src="/static/js/portfolio.js"></script>
 
