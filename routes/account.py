@@ -45,7 +45,7 @@ def login():
             flash("That Email or Phone does not exist!", category="error")
             return redirect(request.url)
 
-    return render_template("login.html", instruction='login')
+    return render_template("login.html")
 
 
 @account.route('/manager', methods=['GET', 'POST'])
