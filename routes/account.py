@@ -88,8 +88,8 @@ def upload_others():
                 filename = secure_filename(file.filename)
                 file.save(f"{folder}/{filename}")
 
-            output_folder_thumbnail = '/static/images/others/thumbnail'
-            output_folder_large = '/static/images/others/large'
+            output_folder_thumbnail = './static/images/others/thumbnail'
+            output_folder_large = './static/images/others/large'
 
             resize_image(folder, 't', output_folder_thumbnail)
             resize_image(folder, 'f', output_folder_large)
