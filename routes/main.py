@@ -1,3 +1,5 @@
+import pprint
+
 from flask import Blueprint, render_template
 from werkzeug.security import check_password_hash, generate_password_hash
 import os
@@ -36,6 +38,33 @@ def environment_concept():
     page = 'environment'
     top_bottom_menu = 'y'
     return render_template('environment_concept.html', bottom_menu=top_bottom_menu, page=page)
+
+
+@main.route('/other_works')
+def other_works():
+    page = 'other_works'
+    top_bottom_menu = 'y'
+    artist_dict = {}
+    artworks_thumbnail_dir = f'static/images/others/thumbnail/'
+    artworks_large_dir = f'static/images/others/large/'
+    index = 1
+    for entry in os.scandir(artworks_thumbnail_dir):
+        if entry.is_file():
+            root, ext = os.path.splitext(entry.name)
+            base_name = root[:-1]
+            f_size_file_name = base_name + 'f' + ext
+            thumbnail_path = f'/{artworks_thumbnail_dir}{entry.name}'
+            large_path = f'/{artworks_large_dir}{f_size_file_name}'
+            title = os.path.splitext(os.path.basename(entry.name))[0][:-2]
+            img = {
+                'title': title,
+                'thumbnail': thumbnail_path,
+                'large': large_path
+            }
+            artist_dict[index] = img
+            index += 1
+    pprint.pprint(artist_dict)
+    return render_template('other_works.html', bottom_menu=top_bottom_menu, page=page, dict=artist_dict)
 
 
 @main.route('/composition')

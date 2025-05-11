@@ -1,8 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #163953; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #163953; background-image: -moz-linear-gradient(top, #163953, #163953); background-image: -ms-linear-gradient(top, #163953, #163953); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#163953), to(#163953)); background-image: -webkit-linear-gradient(top, #163953, #163953); background-image: -o-linear-gradient(top, #163953, #163953); background-image: linear-gradient(top, #163953, #163953); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#163953, endColorstr=#163953, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(22, 57, 83, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(22, 57, 83, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(22, 57, 83, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #163953; }
+.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary { background-color: #AB2B83; background-image: -moz-linear-gradient(top, #6eb6de, #AB2B83); background-image: -ms-linear-gradient(top, #6eb6de, #AB2B83); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#792399), to(#AB2B83)); background-image: -webkit-linear-gradient(top, #EA369B, #AB2B83); background-image: -o-linear-gradient(top, #6eb6de, #5AB2B83); background-image: linear-gradient(top, #5D067E, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #792399; }
+.btn-block { width: 100%; display:block; margin-bottom:20px; }
 
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-html {width: 100%; height: 100%; overflow:auto; font-size: 16px;}
+html { width: 100%; height:100%; overflow:auto; }
+
 body {
+	height: auto;
+	font-family: 'Open Sans', sans-serif;
+    background-color: #FFFFFF;
+
 }
 
 .nav-bar {
@@ -57,21 +72,29 @@ body {
   width: 100%;
 }
 
-
 .cta {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: left;
+    margin-bottom:5%;
 }
-.cta-btn {
-    width: 30%;
-    margin-top:-11%;
-    margin-bottom:11%;
-    transition: transform 0.5s;
-    margin: 0% 0% 0% 4.5%;
+
+.cta div {
+    width:35%;
+    color: white;
+    padding: 8% 0% 0% 5%;
 }
-.cta-btn:hover {
+.cta h3 {
+    font-size: 1rem;
+}
+.cta p {
+    font-size: 0.6rem;
+    opacity:0.7;
+}
+.cta a img{
+    width:70%;
+    padding:10% 0% 20% 0%;
+    transition-duration: 300ms;
+}
+
+.cta a img:hover {
     -ms-transform: scale(1.2);
     -webkit-transform: scale(1.2);
     transform: scale(1.1);
@@ -105,13 +128,13 @@ body {
 }
 #title {
     text-align: center;
-    padding:8% 0% 0% 0%;
+    padding:4% 0% 0% 0%;
     font-size:1.4rem;
 
 }
 #title-genre-text {
     text-align: center;
-    padding:0% 0% 0% 0%;
+    padding:0% 0% 4% 0%;
     opacity: 0.5;
     font-size: 0.7rem;
 }
@@ -131,8 +154,48 @@ body {
 .heading h1 {
     font-size: 1.5rem;
 }
+.artworks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    background: #190f30;
+    padding: 5% 0%;
+    color: white;
+}
+.artworks-container h3 {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    line-height: 0.5rem;
+}
+.artworks-container p {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+.artworks {
+    width: 90%;
+}
+.artworks a {
+    width: 100px;
+    margin-top: 5px;
+}
+.artworks a img {
+    height: 100px;
+    object-fit: cover;
+}
 
 
+#artwork-popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    z-index: 1; /* Ensure it's behind the popup */
+}
 @media only screen and (min-width: 600px) {
   /* For tablets: */
   .col-s-0 {width: 0%;}
@@ -148,11 +211,6 @@ body {
   .col-s-10 {width: 83.33%;}
   .col-s-11 {width: 91.66%;}
   .col-s-12 {width: 100%;}
-  .cta-btn {
-            width: 25%;
-            margin-top:-9%;
-            margin-bottom:9%;
-        }
     .nav-bar {
        font-size: 1.1rem;
    }
@@ -172,8 +230,31 @@ body {
    .heading h1 {
     font-size: 1.7rem;
 }
+.cta a img{
+    width:60%;
+}
+.cta h3 {
+    font-size: 1.2rem;
+}
+.cta p {
+    font-size: 0.7rem;
+}
 }
 @media only screen and (min-width: 768px) {
+.artworks-container h3 {
+    font-size: 1.3rem;
+}
+.artworks-container p {
+    font-size: 0.9rem;
+}
+.artworks a {
+    width: 125px;
+    margin-top: 5px;
+}
+.artworks a img {
+    height: 125px;
+    object-fit: cover;
+}
   /* For desktop: */
   .col-0 {width: 0%;}
   .col-1 {width: 8.33%;}
@@ -188,11 +269,6 @@ body {
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
-  .cta-btn {
-            width: 18%;
-            margin-top:-7%;
-            margin-bottom:7%;
-        }
   .nav-bar {
        font-size: 1.3rem;
    }
@@ -210,13 +286,40 @@ body {
      font-size: 1.8rem;
      margin-left: 3%;
     }
+    .cta a img{
+    width:50%;
+}
+.cta h3 {
+    font-size: 1.5rem;
+}
+.cta p {
+    font-size: 0.85rem;
+}
+.cta {
+    margin-bottom:3%;
+}
 }
 @media (min-width: 1200px) {
-    .cta-btn {
-        width: 15%;
-        margin-top:-6%;
-        margin-bottom:6%;
-    }
+.artworks-container {
+    padding: 3% 0%;
+}
+.artworks-container h3 {
+    font-size: 1.5rem;
+}
+.artworks-container p {
+    font-size: 1rem;
+}
+.artworks {
+    width: 80%;
+}
+.artworks a {
+    width: 150px;
+    margin-top: 5px;
+}
+.artworks a img {
+    height: 150px;
+    object-fit: cover;
+}
     .nav-bar {
        font-size: 1.4rem;
    }
@@ -236,13 +339,30 @@ body {
     .heading h1 {
         font-size: 2.5rem;
     }
+.cta a img{
+    width:40%;
+}
+.cta h3 {
+    font-size: 1.8rem;
+}
+.cta p {
+    font-size: 1rem;
+}
+.cta {
+    margin-bottom:2%;
+}
 }
 @media (min-width: 1900px) {
-    .cta-btn {
-        width: 13%;
-        margin-top:-6%;
-        margin-bottom:6%;
-    }
+.artworks-container {
+    padding: 2% 0%;
+}
+.artworks-container h3 {
+    font-size: 1.8rem;
+    line-height: 1rem;
+}
+.artworks-container p {
+    font-size: 1.1rem;
+}
      .nav-bar {
        font-size: 1.6rem;
    }
@@ -259,13 +379,34 @@ body {
    .heading h1 {
         font-size: 3rem;
     }
+.cta a img{
+    width:30%;
+}
+.cta h3 {
+    font-size: 2.2rem;
+}
+.cta p {
+    font-size: 1.2rem;
+}
 }
 @media (min-width: 2500px) {
-    .cta-btn {
-        width: 10%;
-        margin-top:-6%;
-        margin-bottom:6%;
-    }
+.artworks-container {
+    padding: 1% 0%;
+}
+.artworks-container h3 {
+    font-size: 2.4rem;
+}
+.artworks-container p {
+    font-size: 1.3rem;
+}
+.artworks a {
+    width: 200px;
+    margin-top: 5px;
+}
+.artworks a img {
+    height: 200px;
+    object-fit: cover;
+}
      .nav-bar {
        font-size: 1.9rem;
    }
@@ -282,6 +423,15 @@ body {
    .heading h1 {
         font-size: 4rem;
     }
+    .cta a img{
+    width:20%;
+}
+    .cta h3 {
+    font-size: 2.8rem;
+}
+.cta p {
+    font-size: 1.4rem;
+}
 }
 
 .portfolio-options {

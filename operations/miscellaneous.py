@@ -1,3 +1,5 @@
+import os
+
 from PIL import Image
 from datetime import datetime
 
@@ -46,46 +48,60 @@ def delete_log(date):
         log("Error in deleting log", "error")
 
 
-def resize_image(img, size_f_t):
-    global new_height
+def resize_image(input_folder, size_f_t):
+    global new_height, output_filepath, output_folder
+    if input_folder[-1] != '/':
+        input_folder = input_folder + '/'
+    all_images = os.listdir(input_folder)
 
-    if img.endswith(".jpg"):
+    for a in all_images:
+        image_path = input_folder + a
 
-        fixed_full_height = 800
-        fixed_thumbnail_height = 200
+        if a.endswith(".jpg") or a.endswith(".png"):
 
-        if size_f_t == 'f':
-            new_height = fixed_full_height
-        elif size_f_t == 't':
-            new_height = fixed_thumbnail_height
-        else:
-            log("Wrong image size(f/t), miscellaneous", "error")
+            fixed_full_height = 900
+            fixed_thumbnail_height = 200
 
-        try:
-            image = Image.open(img)
-
-            width = image.width
-            height = image.height
-            filename = image.filename
-            new_filename = filename.split('.')
-            extension = new_filename.pop()
-            new_filename = "".join(new_filename)
             if size_f_t == 'f':
-                new_filename = f"{new_filename}-f.webp"
+                new_height = fixed_full_height
             elif size_f_t == 't':
-                new_filename = f"{new_filename}-t.webp"
+                new_height = fixed_thumbnail_height
+            else:
+                log("Wrong image size(f/t), miscellaneous", "error")
 
-            ratio = (new_height / float(height))
-            new_width = int(float(width * ratio))
+            try:
+                image = Image.open(image_path)
+                width = image.width
+                height = image.height
+                filename = image.filename
+                new_name = filename.split('.')
+                file_name = new_name[0].split('\\')[-1]
+                file_name_filled_space = file_name.replace(' ', '-')
+                new_filename = file_name_filled_space + '.jpg'
+                # extension = new_filename.pop()
 
-            image = image.resize((new_width, new_height))
-            image = image.convert('RGB')
-            image.save(new_filename, 'webp')
+                if size_f_t == 'f':
+                    new_filename = f"{file_name_filled_space}-f.jpg"
+                    output_folder = input_folder + 'large/'
+                    output_filepath = output_folder + new_filename
+                elif size_f_t == 't':
+                    new_filename = f"{file_name_filled_space}-t.jpg"
+                    output_folder = input_folder + 'thumbnail/'
+                    output_filepath = output_folder + new_filename
 
-        except Exception as e:
-            log("failed to open image", 'error')
-    else:
-        log("Not JPG format", 'error')
+                ratio = (new_height / float(height))
+                new_width = int(float(width * ratio))
+
+                image = image.resize((new_width, new_height))
+                image = image.convert('RGB')
+                if not os.path.exists(output_folder):
+                    os.mkdir(output_folder)
+                image.save(output_filepath)
+
+            except Exception as e:
+                log("failed to open image", 'error')
+        else:
+            log("Not JPG/PNG format", 'error')
 
 
 

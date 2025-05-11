@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block index_content %}
+<style>
+.artwork-popup {
+    width:50%;
+}
+
+
+</style>
+<div class="artworks-container">
+    <h3>OTHER ARTWORKS</h3>
+    <P>Please click to view in large size.</P>
+    <div class="artworks">
+    {% for img in dict %}
+    <a type="button" onclick="openFullImage('{{dict[img]['large']}}', '{{dict[img]['title']}}')"><img src="{{dict[img]['thumbnail']}}"></a>
+    {% endfor %}
+    </div>
+</div>
+<div id="artwork-popup-overlay"></div>
+<!--<div class="artwork-popup">-->
+<!--    <div id="artwork-popup">-->
+<!--        <div style=" display:flex; justify-content:space-between; background:black; color:gray; padding:1% 2% 0% 2%;">-->
+<!--            <p style="background:yellow;">IMAGE VIEWER</p>-->
+<!--            <a type="button" style="color:white;background:red;" onclick="closeFullImage()">Close</a>-->
+<!--        </div>-->
+<!--        <div id="full-size-img-box">-->
+<!--            <h3 id="artwork-title"></h3>-->
+<!--            <img id="full-size-img" src="">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<h1>Gestures</h1>
+<img src="static/images/character_concept/lead/Gesture.jpg" loading="lazy">
+<img src="static/images/character_concept/lead/sketch.jpg" loading="lazy">
+
+
+<script src="/static/js/portfolio.js"></script>
+
+{% endblock %}

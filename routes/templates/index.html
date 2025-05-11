@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+<style>
 
+</style>
 
-<body>
 
 <!--{% if bottom_menu == 'y' %}-->
 <!--<div class="gallery-menu">-->
@@ -26,26 +27,56 @@
 
 {% block index_content %}
 
-<div class="col-12, col-s-12" style="width: 100%;
+<div style="
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:center;
+    width: 100%;
     background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),url('static/images/web_design/title_image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    aspect-ratio: 3 / 1;s
-    height: auto;
+    height: 50%;
     color: white;
     margin: 0% 0% 2% 0%;">
-    <h1 id="title">HUNTING ZONE</h1>
-    <h6 id="title-genre-text" style="">MMORPG - SURVIVAL - POST-APOCALYPTIC</h6>
-<h5 id="title-text">
-        What began with resource battle has escalated to global chaos. The whole world has gone rogue hunting whoever or
-        whatever possess any resource. Societies have broken into small factions with sword to each other's throats.
-    <br>Let's explore the HUNTING ZONE!
-    </h5>
+    <h1 id="title">PORTFOLIO</h1>
+    <h6 id="title-genre-text" style="">GAME-CONCEPT</h6>
+<!--<h5 id="title-text">-->
+<!--        What began with resource battle has escalated to global chaos. The whole world has gone rogue hunting whoever or-->
+<!--        whatever possess any resource. Societies have broken into small factions with sword to each other's throats.-->
+<!--    <br>Let's explore the HUNTING ZONE!-->
+<!--    </h5>-->
 </div>
 
-<div class="cta">
-    <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/characters_cta.jpg" width="100%" loading="lazy"></a>
-    <div class="cta-btn"><a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a></div>
+<div class="cta" style="background: url('static/images/web_design/characters_cta.jpg');display: flex;
+    width: 100%;background-repeat: no-repeat;background-size: cover;background-position-x: 40%;">
+    <div>
+        <h3>CHARACTERS</h3>
+        <p>Concept sketches and 3D concept explorations of characters, props, NPCs and creatures</p>
+        <a href="{{url_for('main.character_concept')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a>
+    </div>
+</div>
+<div class="cta" style="background: url('static/images/web_design/environment_cta.jpg');display: flex;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 40%;">
+    <div>
+        <h3>ENVIRONMENTS</h3>
+        <p>A world under waters glimmering with light swarming with predators brought to life by competing communities for resources, power and control.</p>
+        <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a>
+    </div>
+</div>
+<div class="cta" style="background: url('static/images/web_design/other_cta.jpg');display: flex;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 40%;">
+    <div>
+        <h3>OTHER WORKS</h3>
+        <p>Random illustrations, compositions, anatomy, character or figure studies.</p>
+        <a href="{{url_for('main.other_works')}}"><img src="static/images/web_design/cta_button.png" loading="lazy"></a>
+    </div>
 </div>
 <!--<div class="cta">-->
 <!--    <a href="{{url_for('main.environment_concept')}}"><img src="static/images/web_design/environment_cta.jpg" width="100%" loading="lazy"></a>-->
@@ -78,8 +109,14 @@
 <!--</div>-->
 <!--{% endif %}-->
 
-
-</body>
+<div style="position:fixed;top:50%;left:50%;transform: translate(-50%, -50%);">
+    <div>
+        <div style="display:flex;justify-content:space-between; width:100%;background:black; color:gray; padding: 1% 2% 0% 2%;">
+            <p>Image viewer</p>
+            <a type="button" style="color:white;" onclick="">Close</a>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
