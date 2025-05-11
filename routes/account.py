@@ -28,7 +28,7 @@ def login():
     if request.method == 'POST':
 
         email = request.form.get('email')
-        user = db.session.query(Member).filter_by(username=email)
+        user = db.session.query(Member).filter(Member.username == email)
 
         password = request.form.get('password')
 
