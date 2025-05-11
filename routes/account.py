@@ -20,7 +20,6 @@ account = Blueprint('account', __name__, static_folder='static', template_folder
 
 @account.route('/login', methods=['GET', 'POST'])
 def login():
-    user = None
     result = db.session.query(Member).all()
 
     if request.method == 'POST':

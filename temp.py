@@ -20,8 +20,7 @@ from extensions import db
 # print(hash_and_salted_password)
 # with app.app_context():
 #     user = db.session.query(Member).filter_by(name='Shwetabh Suman').scalar()
-#     role = db.session.query(Role).filter_by(name='admin').scalar()
-#     user.role.append(role)
-#
-#     db.session.commit()
+#     admin = db.session.query(Role).filter_by(name='admin').scalar()
+#     if admin in user.role:
+#         print('yes')
 
