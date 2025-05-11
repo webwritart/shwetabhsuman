@@ -69,8 +69,7 @@ def resize_image(input_folder, size_f_t, output_folder):
             elif size_f_t == 't':
                 new_height = fixed_thumbnail_height
             else:
-                log("Wrong image size(f/t), miscellaneous", "error")
-
+                pass
             try:
                 image = Image.open(image_path)
                 width = image.width
@@ -99,9 +98,9 @@ def resize_image(input_folder, size_f_t, output_folder):
                 image.save(output_filepath)
 
             except Exception as e:
-                log("failed to open image", 'error')
+                pass
         else:
-            log("Not JPG/PNG format", 'error')
+            pass
 
 
 
