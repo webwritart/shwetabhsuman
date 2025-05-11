@@ -21,31 +21,34 @@ account = Blueprint('account', __name__, static_folder='static', template_folder
 @account.route('/login', methods=['GET', 'POST'])
 def login():
     user = None
-    result = db.session.query(Member)
+    result = db.session.query(Member).all()
 
     if request.method == 'POST':
+        user_emails = []
         data = request.form.get('email')
         password = request.form.get('password')
 
-        if '@' in data:
-            email = data
-            result = db.session.execute(db.select(Member).where(Member.username == email))
-            user = result.scalar()
-        else:
-            flash('Please enter correct email', 'error')
+        for u in result:
+            user_emails.append(u.username)
 
         # Email or Phone doesn't exist or password incorrect:
-        if not user:
-            flash("That Email or Phone does not exist, please try again.", category="error")
-        elif not check_password_hash(user.password, password):
-            flash('Password incorrect, please try again.', category='error')
+        if data in user_emails:
+            user = db.session.query(Member).filter_by(username=data).scalar()
+            if not check_password_hash(user.password, password):
+                flash('Password incorrect, please try again.', category='error')
+                return redirect(request.url)
+            else:
+                login_user(user)
+                admin = db.session.query(Role).filter_by(name='admin').one()
+                if admin in user.role:
+                    return redirect(url_for('account.manager', logged_in=current_user.is_authenticated))
         else:
-            login_user(user)
-            admin = db.session.query(Role).filter_by(name='admin').one()
-            if admin in user.role:
-                return redirect(url_for('account.manager', logged_in=current_user.is_authenticated))
+            flash("That Email or Phone does not exist!", category="error")
+            return redirect(request.url)
 
-            return redirect(url_for('account.login'))
+
+
+
 
     return render_template("login.html", instruction='login')
 
