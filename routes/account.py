@@ -28,8 +28,8 @@ def login():
     if request.method == 'POST':
 
         email = request.form.get('email')
-        user = db.session.query(Member).filter(Member.username == email)
-
+        user = db.session.query(Member).filter_by(username=email).one()
+        print(user.password)
         password = request.form.get('password')
 
         # Email or Phone doesn't exist or password incorrect:
