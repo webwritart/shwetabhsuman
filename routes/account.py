@@ -20,19 +20,19 @@ account = Blueprint('account', __name__, static_folder='static', template_folder
 
 @account.route('/login', methods=['GET', 'POST'])
 def login():
+    user_emails = []
     result = db.session.query(Member).all()
+    for u in result:
+        user_emails.append(u.username)
 
     if request.method == 'POST':
-        user_emails = []
-        data = request.form.get('email')
+
+        email = request.form.get('email')
         password = request.form.get('password')
 
-        for u in result:
-            user_emails.append(u.username)
-
         # Email or Phone doesn't exist or password incorrect:
-        if data in user_emails:
-            user = db.session.query(Member).filter_by(username=data).scalar()
+        if email in user_emails:
+            user = db.session.query(Member).filter_by(username=email).one_or_none()
             if not check_password_hash(user.password, password):
                 flash('Password incorrect, please try again.', category='error')
                 return redirect(request.url)

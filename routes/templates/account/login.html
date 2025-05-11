@@ -15,9 +15,6 @@
         {% endif %}
     {% endwith %}
     <form style="display:flex; flex-direction:column; width:20%;" action="{{ url_for('account.login') }}" method="post">
-      {% if prev_page == 'enroll' %}
-        <input type="hidden" id="prev-page" name="prev-page" value="enroll">
-      {% endif %}
       <input type="text" name="email" placeholder="Email" required="required"/>
       <input type="password" name="password" placeholder="Password" required="required"/>
       <button type="submit" class="btn btn-primary btn-block btn-large">
