@@ -12,12 +12,6 @@ main = Blueprint('main', __name__, static_folder='static', template_folder='temp
 
 @main.route('/')
 def home():
-    user = db.session.query(Member).filter_by(username='shwetabhartist@gmail.com').scalar()
-    admin = db.session.query(Role).filter_by(name='admin').scalar()
-    if admin not in user.role:
-        user.role.append(admin)
-        db.session.commit()
-
     # print(images)
 
     # for f in os.listdir(path):
