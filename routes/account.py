@@ -29,7 +29,6 @@ def login():
 
         email = request.form.get('email')
         user = db.session.query(Member).filter_by(username=email).one()
-        print(user.password)
         password = request.form.get('password')
 
         # Email or Phone doesn't exist or password incorrect:
@@ -39,7 +38,11 @@ def login():
                 return redirect(request.url)
             else:
                 login_user(user)
-                admin = db.session.query(Role).filter_by(name='admin').one()
+                admin = ''
+                roles = db.session.query(Role).all()
+                for r in roles:
+                    if r.name == 'admin':
+                        admin = r
                 if admin in user.role:
                     return redirect(url_for('account.manager', logged_in=current_user.is_authenticated))
         else:
