@@ -21,7 +21,7 @@
 
 <body>
 <div class="nav-bar">
-        <a href="{{url_for('main.home')}}">SHWETABH SUMAN</a>
+        <a class="nav-option" href="{{url_for('main.home')}}">SHWETABH SUMAN</a>
         <a class="nav-option" href="{{url_for('about.home')}}">ABOUT ARTIST</a>
         {% if current_user.is_authenticated %}
         <a href="{{url_for('account.logout')}}">LOGOUT</a>
