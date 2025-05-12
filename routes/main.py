@@ -70,7 +70,6 @@ def other_works():
     for key in keys:
         item = artist_dict[key]
         artist_dict_shuffled[key] = item
-    print(artist_dict_shuffled)
     return render_template('other_works.html', bottom_menu=top_bottom_menu, page=page, dict=artist_dict_shuffled)
 
 

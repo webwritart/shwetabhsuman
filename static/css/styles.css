@@ -159,9 +159,9 @@ body {
 }
 .fixed-menu {
     position:fixed;
-    top:90vh;
+    top:85vh;
     left:50vw;
-    transform: translate(-50%, -10%);
+    transform: translate(-50%, -15%);
     text-align:center;
     z-index:5;
 }
@@ -221,6 +221,10 @@ body {
 @media only screen and (min-width: 768px) {
 
   /* For desktop: */
+.fixed-menu {
+    top:90vh;
+    transform: translate(-50%, -10%);
+}
 #character-start h1, #creatures-start h1, #props-start h1, #environment-heading, #gestures {
     font-size: 1.2rem;
     padding-top: 2%;
