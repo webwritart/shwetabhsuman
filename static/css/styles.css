@@ -157,6 +157,32 @@ body {
     padding-top: 2%;
     text-align: center;
 }
+.fixed-menu {
+    position:fixed;
+    top:90vh;
+    left:50vw;
+    transform: translate(-50%, -10%);
+    text-align:center;
+    z-index:5;
+}
+.fixed-menu div {
+    display:flex;
+    flex-direction:column;
+}
+.fixed-menu a {
+    background:#174555;
+    color: white;
+    opacity: 0.8;
+    margin:1% 0%;
+    padding: 2% 12%;
+    width:130%;
+    border-radius: 20%;
+    transition-duration: 200ms;
+}
+.fixed-menu a:hover {
+    transform: scale(1.04);
+    opacity:1;
+}
 @media only screen and (min-width: 600px) {
   /* For tablets: */
 #character-start h1, #creatures-start h1, #props-start h1, #environment-heading, #gestures {
