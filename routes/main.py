@@ -73,6 +73,11 @@ def other_works():
     return render_template('other_works.html', bottom_menu=top_bottom_menu, page=page, dict=artist_dict_shuffled)
 
 
+@main.route('/privacy_policy')
+def privacy_policy():
+    return render_template('privacy_policy.html')
+
+
 @main.route('/3d')
 def three_d():
     return render_template('3d.html')
