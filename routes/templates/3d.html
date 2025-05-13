@@ -33,12 +33,14 @@
     <img style="margin-bottom:1%;" class="full-width-img" src="static/images/3d/Almirah.jpg" loading="lazy">
     <img style="margin-bottom:1%;" class="full-width-img" src="static/images/3d/Bookshelf.jpg" loading="lazy">
 </div>
-<div class="fixed-menu">
-    <div>
-        <a href="{{ url_for('main.character_concept') }}">CHARACTERS</a>
-        <a href="{{ url_for('main.environment_concept') }}">ENVIRONMENTS</a>
-        <a href="{{ url_for('main.other_works') }}">OTHER WORKS</a>
-        <a href="{{ url_for('main.three_d') }}">3D</a>
+<div class="fixed-menu-container">
+    <div class="fixed-menu">
+        <div class="fixed-menu-inner">
+            <a href="{{ url_for('main.character_concept') }}">CHARACTERS</a>
+            <a href="{{ url_for('main.environment_concept') }}">ENVIRONMENTS</a>
+            <a href="{{ url_for('main.other_works') }}">OTHER WORKS</a>
+            <a href="{{ url_for('main.three_d') }}">3D</a>
+        </div>
     </div>
 </div>
 {% endblock %}

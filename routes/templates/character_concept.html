@@ -49,13 +49,14 @@
 <!--<div>-->
 <!--    <img src="static/images/character_concept/NPC_Agrarian-People-II.jpg" width="100%" loading="lazy">-->
 <!--</div>-->
-
-<div class="fixed-menu">
-    <div>
-        <a href="{{ url_for('main.character_concept') }}">CHARACTERS</a>
-        <a href="{{ url_for('main.environment_concept') }}">ENVIRONMENTS</a>
-        <a href="{{ url_for('main.other_works') }}">OTHER WORKS</a>
-        <a href="{{ url_for('main.three_d') }}">3D</a>
+<div class="fixed-menu-container">
+    <div class="fixed-menu">
+        <div class="fixed-menu-inner">
+            <a href="{{ url_for('main.character_concept') }}">CHARACTERS</a>
+            <a href="{{ url_for('main.environment_concept') }}">ENVIRONMENTS</a>
+            <a href="{{ url_for('main.other_works') }}">OTHER WORKS</a>
+            <a href="{{ url_for('main.three_d') }}">3D</a>
+        </div>
     </div>
 </div>
 
