@@ -159,7 +159,7 @@ body {
 }
 .fixed-menu {
     position:fixed;
-    top:85vh;
+    top:80vh;
     left:50vw;
     transform: translate(-50%, -15%);
     text-align:center;
@@ -178,14 +178,45 @@ body {
     width:130%;
     border-radius: 20%;
     transition-duration: 200ms;
-    font-size:1rem;
+    font-size:0.9rem;
 }
 .fixed-menu a:hover {
     transform: scale(1.04);
     opacity:1;
 }
+.responsive-iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        margin: 1% 1%;
+    }
+.yt-video-container {
+    padding: 0% 5% 5% 5%;
+}
+.yt-video-container h3, .three-d-photo-container h3 {
+    padding-left:1%;
+    font-weight:600;
+    font-size: 1.2rem;
+}
+.three-d-photo-container {
+    padding:0% 5% 5% 5%;
+}
+#three-d-start h1 {
+    text-align:center;
+    padding-top:3%;
+    font-weight:600;
+    font-size: 1.4rem;
+}
 @media only screen and (min-width: 600px) {
   /* For tablets: */
+  #three-d-start h1 {
+    font-size: 1.5rem;
+  }
+.yt-video-container h3, .three-d-photo-container h3 {
+    font-size: 1.3rem;
+}
+.responsive-iframe {
+    width: 47%;
+}
 #character-start h1, #creatures-start h1, #props-start h1, #environment-heading, #gestures {
     font-size: 1.1rem;
     padding-top: 2%;
@@ -220,7 +251,12 @@ body {
 }
 }
 @media only screen and (min-width: 768px) {
-
+.yt-video-container h3, .three-d-photo-container h3 {
+    font-size: 1.4rem;
+}
+ #three-d-start h1 {
+    font-size: 1.6rem;
+  }
   /* For desktop: */
 
 #character-start h1, #creatures-start h1, #props-start h1, #environment-heading, #gestures {
@@ -258,6 +294,12 @@ body {
 }
 }
 @media (min-width: 1200px) {
+.yt-video-container h3, .three-d-photo-container h3 {
+    font-size: 1.5rem;
+}
+#three-d-start h1 {
+    font-size: 1.8rem;
+  }
 #character-start h1, #creatures-start h1, #props-start h1, #environment-heading, #gestures {
     font-size: 1.4rem;
     padding-top: 1.5%;
@@ -295,6 +337,12 @@ body {
 }
 }
 @media (min-width: 1900px) {
+.yt-video-container h3, .three-d-photo-container h3 {
+    font-size: 1.6rem;
+}
+#three-d-start h1 {
+    font-size: 2rem;
+  }
 #character-start h1, #creatures-start h1, #props-start h1, #environment-heading, #gestures {
     font-size: 1.6rem;
     padding-top: 1%;
@@ -325,10 +373,16 @@ body {
     font-size: 1.2rem;
 }
 .fixed-menu a {
-    font-size:1.2rem;
+    font-size:1.1rem;
 }
 }
 @media (min-width: 2500px) {
+.yt-video-container h3, .three-d-photo-container h3 {
+    font-size: 1.8rem;
+}
+#three-d-start h1 {
+    font-size: 2.2rem;
+  }
 #character-start h1, #creatures-start h1, #props-start h1, #environment-heading, #gestures {
     font-size: 1.8rem;
     padding-top: 1%;
@@ -359,7 +413,7 @@ body {
     font-size: 1.4rem;
 }
 .fixed-menu a {
-    font-size:1.4rem;
+    font-size:1.3rem;
 }
 }
 
