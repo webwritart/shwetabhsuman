@@ -1,11 +1,12 @@
 import pprint
 import random
-from extensions import db
-from models.member import Member, Role
-from flask import Blueprint, render_template
+# from extensions import db
+# from models.member import Member, Role
+from flask import Blueprint, render_template, request, flash, redirect
 from werkzeug.security import check_password_hash, generate_password_hash
 import os
 from datetime import datetime
+from operations.messenger import send_email
 
 main = Blueprint('main', __name__, static_folder='static', template_folder='templates')
 
@@ -17,7 +18,7 @@ def home():
     # for f in os.listdir(path):
     #     im = Image.open(path + '/' + f)
     current_year = datetime.now().year
-    return render_template('index.html',current_year=current_year)
+    return render_template('index.html', current_year=current_year)
 
 
 @main.route('/game_world_plan')
@@ -88,3 +89,32 @@ def composition():
     col = ['#d9d9d9', '#d9d9d9', '#d9d9d9', 'white']
     top_bottom_menu = 'y'
     return render_template('composition.html', col=col, bottom_menu=top_bottom_menu)
+
+
+@main.route('/illustrations')
+def illustrations():
+    page = 'other_works'
+    top_bottom_menu = 'y'
+    return render_template('illustrations.html', page=page, bottom_menu=top_bottom_menu)
+
+
+@main.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        email2 = request.form.get('email2')
+        msg = request.form.get('message')
+        message = f'{msg}\n\n\nSENDER DETAILS:\nName: {name}\nEmail: {email}\n'
+
+        success_msg = (f'Dear {name},\n\nThanks for sending me a message.\nI will get back to you as soon as possible. '
+                       f':)\n\n\nShwetabh Suman\nConcept Artist & Illustrator\nNew Delhi, India')
+
+        if email == email2:
+            send_email('IMPORTANT!! - Main Portfolio', ['shwetabhartist@gmail.com'], email, message, '', '')
+            send_email('MESSAGE SENT - Shwetabh Suman', [email], 'shwetabhartist@gmail.com', success_msg, '', '')
+            flash('Message sent successfully!', 'success')
+        else:
+            flash("The email doesn't match!", "error")
+            return redirect(request.url)
+    return render_template('contact.html')

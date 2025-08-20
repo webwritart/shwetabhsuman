@@ -5,10 +5,10 @@ from flask_login import login_user, current_user, logout_user, login_required
 from werkzeug.security import check_password_hash
 from werkzeug.utils import secure_filename
 
-from extensions import db
+# from extensions import db
 from flask import Blueprint, render_template, request, flash, send_file, redirect, url_for, session
 # from werkzeug.security import check_password_hash, generate_password_hash
-from models.member import Member, Role
+# from models.member import Member, Role
 from operations.miscellaneous import resize_image
 
 # from flask_login import current_user, login_required, login_user, logout_user

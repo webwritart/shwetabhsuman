@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .gallery-full-width {
+        width:100%;
+        background: black;
+    }
+    .gallery-full-width img {
+        padding-bottom: 1%;
+    }
+
+    .heading-extra-large {
+        background: black;
+        color: white;
+    }
+
+    @media only screen and (max-width: 600px) {
+        pass
+    }
+    @media only screen and (min-width: 600px) {
+        .gallery-full-width {
+            width: 85%;
+        }
+    }
+    @media only screen and (min-width: 1280px) {
+        .gallery-full-width {
+            width: 70%;
+        }
+    }
+</style>
+<h3 id="environment-heading">ILLUSTRATIONS</h3>
+<div style="background: black; padding:2% 2%; display: flex; justify-content: center;">
+<!--    <div class="heading-extra-large">-->
+<!--        <p class="text-center">CHARACTER CONCEPT</p>-->
+<!--    </div>-->
+    <div class="gallery-full-width">
+        <img src="static/images/illustrations/Baba_Bhairav_Dance_sm-f.jpg" width="100%" loading="lazy">
+        <div style="display: flex; justify-content: center; width: 100%; padding-bottom: 0.5%;">
+            <div style="padding-right:1%;">
+                <img src="static/images/illustrations/Shivlinga.jpg" width=" 100%" loading="lazy">
+            </div>
+            <div>
+                <img src="static/images/illustrations/Kamakhya-f.jpg" width="100%" loading="lazy">
+            </div>
+        </div>
+<!--        <img src="static/images/illustrations/Shivlinga.jpg" width="100%" loading="lazy">-->
+        <img src="static/images/illustrations/env-2.jpg" width="100%" loading="lazy">
+        <img src="static/images/illustrations/env-1.jpg" width="100%" loading="lazy">
+<!--        <img src="static/images/illustrations/Kamakhya-f.jpg" width="100%" loading="lazy">-->
+        <img src="static/images/illustrations/fantasy-world.jpg" width="100%" loading="lazy">
+        <img src="static/images/illustrations/Kedarnath-f.jpg" width="100%" loading="lazy">
+        <div style="display: flex; justify-content: center; width: 100%; padding-bottom: 0.5%;">
+            <div style="padding-right:1%;">
+                <img src="static/images/illustrations/concept-art-practice-f.jpg" width=" 100%" loading="lazy">
+            </div>
+            <div>
+                <img src="static/images/illustrations/only-painting-f.jpg" width="100%" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-menu-container">
+    <div class="fixed-menu">
+        <div class="fixed-menu-inner">
+            <a href="{{ url_for('main.character_concept') }}">CHARACTERS</a>
+            <a href="{{ url_for('main.environment_concept') }}">ENVIRONMENTS</a>
+            <a href="{{ url_for('main.three_d') }}">3D</a>
+            <a href="{{ url_for('main.other_works') }}">OTHER WORKS</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
