@@ -3,9 +3,7 @@ import os
 from werkzeug.security import generate_password_hash
 from PIL import Image
 from main_site import app
-from models.member import Role, Member
 from operations.miscellaneous import resize_image
-from extensions import db
 
 # DIR = 'static/images/others/'
 # output_folder = 'static/images/others/thumbnail'
