@@ -110,9 +110,10 @@ def contact():
         success_msg = (f'Dear {name},\n\nThanks for sending me a message.\nI will get back to you as soon as possible. '
                        f':)\n\n\nShwetabh Suman\nConcept Artist & Illustrator\nNew Delhi, India')
 
-        spam_test_1 = 'http://'
-        spam_test_2 = 'https://'
-        if spam_test_1 or spam_test_2 not in name:
+        spam_test_1 = 'http'
+        spam_test_2 = 'https'
+        if spam_test_1 not in name and spam_test_2 not in name:
+            print('Passed spam test as positive.')
             if email == email2:
                 send_email('IMPORTANT!! - Main Portfolio', ['shwetabhartist@gmail.com'], email, message, '', '')
                 send_email('MESSAGE SENT - Shwetabh Suman', [email], 'shwetabhartist@gmail.com', success_msg, '', '')
@@ -120,4 +121,9 @@ def contact():
             else:
                 flash("The email doesn't match!", "error")
                 return redirect(request.url)
+        else:
+            print('failed spam test.')
+            spam_report = f'{datetime.now()} -- Spam detected -- email: {email}\n'
+            with open('spam_report.txt', 'a') as f:
+                f.write(spam_report)
     return render_template('contact.html')
